@@ -1,10 +1,13 @@
 import re
 
-digit = re.compile("^[0-9]+")
+digit = re.compile("\d+")
+decimal = re.compile("(\d)+.(\d)+")
+char = re.compile("'\w'", re.ASCII)
+word = re.compile("\"\w*\"", re.ASCII)
+id = re.compile("[a-zA-z][a-zA-z\d]*")
 
-def isDigit(string) :
-    i = digit.match(string)
+def isRegex(num, regex) :
+    i = regex.match(num)
     if i == None : return  False
-    return i.group() == string
-
+    return i.group() == num
 
