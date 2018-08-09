@@ -1,13 +1,39 @@
-int a = 3;
+ShellSort(int[] : a, int : tam): int[] {
+    int h = tam/2;
+    int i, j;
+    while(h >= 1){
+        for(i = 0 to  h){
+            j = i;
+            while(j+h < tam){
+                if(a[j] > a[j+h]){
+                    int temp = a[j]; 
+                    a[j] = a[j+h]; 
+                    a[j+h] = temp;
+                }
+                j = j+h;
+            }    
+        }
+        h = h-1;
+    }
+    return a;
+}
 
+printArray(int : a[], int : tam):void{
+    int i;
+    for(i = 0 to tam-1){
+        output("%int ", a[i]);
+    }
+    output("\n");
+}
 
-
-
-
-int b = 20;
-
-
-output ( ) ;
-
-
-
+Init():int{
+    output("Digite o tamanho: ");
+    int tam;
+input("%var", tam);
+    int a[tam];
+    output("Digite os elementos:\n");
+    for(i = 0 to tam-1){
+        input("%var", a[i]);
+    }
+            output("Array antes de ordenar:\n");
+            printArray(a, tam);
