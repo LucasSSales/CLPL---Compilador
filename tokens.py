@@ -4,17 +4,25 @@ class TokenCategory(Enum):
     id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate = list(range(44))
 
 class Token() :
-    def __init__(self, token, value):
+    def __init__(self, token, value, line, column):
         self.token = token
         self.value = value
+        self.line = line
+        self.column = column
     def __str__(self):
-        return "<" + self.token.name + " : " + self.value + ">"
+        return "<" + self.token.name + " : " + self.value + " , " + str(self.line) + ", " + str(self.column) + ">"
+
 atomics = ['+', '-', ';']
+
 def nextChar(currente, next) :
+    #print("currente: " + str(currente))
+    #print("next: " + str(next))
+    #print()
     if currente == '' and next != ' ': return True
     if currente[0] == "\"": return True
-    if next == ' ': return False
+    if next == ' ' or next == '(' or next == ')': return False
     if currente in atomics or next in atomics : return False
+
     return True
 
 
