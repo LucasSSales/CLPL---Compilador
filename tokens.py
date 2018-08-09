@@ -1,7 +1,7 @@
 from enum import  Enum
 from Regex import  *
 class TokenCategory(Enum):
-    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate = list(range(44))
+    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global = list(range(47))
 
 class Token() :
     def __init__(self, token, value, line, column):
@@ -10,7 +10,7 @@ class Token() :
         self.line = line
         self.column = column
     def __str__(self):
-        return "<" + self.token.name + " : " + self.value + " , " + str(self.line) + ", " + str(self.column) + ">"
+        return "<" + self.token.name + " : " + self.value + " >"
 
 atomics = ['+', '-', ';']
 
@@ -71,4 +71,7 @@ def defineTokenCategory(type) :
     if type == 'to' : return TokenCategory.IntTo
     if type == 'rate' : return TokenCategory.IntRate
     if isRegex(type, id) : return  TokenCategory.id
+    if type == 'output' : return TokenCategory.Out
+    if type == 'input' : return TokenCategory.In
+    if isRegex(type, Global) : return TokenCategory.Global
     return None
