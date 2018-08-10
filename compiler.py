@@ -3,6 +3,9 @@ from tokens import *
 atomics = [' ', '{', '}', '(', ')', '[', ']', ':', '\n', ';', '+', '-','*','/','%','^',',', '>', '<', '=', '!']
 composites = ['>=', '<=', '==', '!=', '++']
 
+def errorMsg(line, column):
+    return "LEXICAL ERROR ON LINE: " + str(line) + " AND COLUMN: " + str(column)
+
 def readLine(lines, numLine):
     column, character = 0, ''
     tokenSequence = []
@@ -47,6 +50,14 @@ def readLine(lines, numLine):
             elif(newtoken != '' and character in atomics):
                 tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken, numLine, column))
                 newtoken = ''
+
+            #verificar erro lexico
+            if(tokenSequence and tokenSequence[-1].token == None):
+                print(errorMsg(numLine, column))
+                tokenSequence.pop(-1)
+                break
+            
+
 
             #apos lancar o token, se estiver num ' ' ou num '\n', passa pro proximo
             if(character == ' ' or character == '\n'): continue
