@@ -1,0 +1,29 @@
+fib(int : limite):int{
+    int f = 1;
+    int anterior = 1;
+    int contador = 2;
+    if(limite == 0){
+        output("0");
+        return 1;
+    }
+    if(limite == 1){
+        output(", 1");
+        return 2;
+    }
+    while(f <= limite){
+        output(", %int", f);
+        contador = contador + 1;
+        int temp = f;
+        f = f + anterior;
+        anterior = temp;
+    }
+    return contador;
+}
+
+Init():int{
+    output("Digite o limite:");
+    int limite;
+    input("%var", limite);
+    fib(limite); //retorna quantos elementos da foram impressos
+    return 0;
+}
