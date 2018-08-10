@@ -12,9 +12,6 @@ class Token() :
     def __str__(self):
         return "<" + self.token.name + " : " + self.value + " >"
 
-atomics = ['+', '-', ';']
-
-
 
 
 def defineTokenCategory(type) :
