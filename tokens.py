@@ -14,6 +14,7 @@ class Token() :
 
 
 
+
 def defineTokenCategory(type) :
     if type == 'output' : return TokenCategory.Out
     if type == 'input' : return TokenCategory.In
