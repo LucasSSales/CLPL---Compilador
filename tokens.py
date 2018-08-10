@@ -1,7 +1,7 @@
 from enum import  Enum
 from Regex import  *
 class TokenCategory(Enum):
-    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont = list(range(48))
+    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont, Return = list(range(49))
 
 class Token() :
     def __init__(self, token, value, line, column):
@@ -10,11 +10,14 @@ class Token() :
         self.line = line
         self.column = column
     def __str__(self):
-        return "[" + line + ", " + column + "]" + "(" + self.token.value + ", " + self.token.name + ")" + "{" + value + "}"
+        return "[" + str(self.line) + ", " + str(self.column) + "]" + "(" + str(self.token.value) + ", " + self.token.name + ")" + "{" + self.value + "}"
 
 
 
 def defineTokenCategory(type) :
+    if type == 'output' : return TokenCategory.Out
+    if type == 'input' : return TokenCategory.In
+    if type == 'return' : return TokenCategory.Return
     if type == 'int' : return  TokenCategory.TypeInt
     if type == 'Init' : return TokenCategory.Init
     if type == 'float' : return TokenCategory.TypeFloat
@@ -59,8 +62,6 @@ def defineTokenCategory(type) :
     if type == 'to' : return TokenCategory.IntTo
     if type == 'rate' : return TokenCategory.IntRate
     if isRegex(type, id) : return  TokenCategory.id
-    if type == 'output' : return TokenCategory.Out
-    if type == 'input' : return TokenCategory.In
     if isRegex(type, Global) : return TokenCategory.Global
     if type == ':' : return TokenCategory.SepPont
     return None
