@@ -1,5 +1,17 @@
 from tokens import *
 
+class reader():
+    def __init__(self, file):
+        self.file = file
+        self.queue = []
+    def nextLine(self) :
+        return self.file.readline()
+    def nextToken(self) :
+        if not self.queue :
+            return "Vazio"
+        return self.queue.pop(0)
+
+
 atomics = [' ', '{', '}', '(', ')', '[', ']', ':', '\n', ';', '+', '-','*','/','%','^',',', '>', '<', '=', '!']
 composites = ['>=', '<=', '==', '!=', '++']
 

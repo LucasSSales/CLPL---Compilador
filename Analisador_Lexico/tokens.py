@@ -10,7 +10,7 @@ class Token() :
         self.line = line
         self.column = column
     def __str__(self):
-        return "[" + str(self.line) + ", " + str(self.column) + "]" + "(" + str(self.token.value) + ", " + self.token.name + ")" + "{" + self.value + "}"
+        return "[%04d %04d] {%04d %10s} {%s}" %(self.line,self.column, self.token.value, self.token.name, self.value)
 
 
 
