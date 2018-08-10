@@ -1,21 +1,17 @@
 from enum import  Enum
 from Regex import  *
 class TokenCategory(Enum):
-    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate = list(range(44))
+    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont = list(range(48))
 
 class Token() :
-    def __init__(self, token, value):
+    def __init__(self, token, value): #line, column):
         self.token = token
         self.value = value
+        #self.line = line
+        #self.column = column
     def __str__(self):
-        return "<" + self.token.name + " : " + self.value + ">"
-atomics = ['+', '-', ';']
-def nextChar(currente, next) :
-    if currente == '' and next != ' ': return True
-    if currente[0] == "\"": return True
-    if next == ' ': return False
-    if currente in atomics or next in atomics : return False
-    return True
+        return "<" + self.token.name + " : " + self.value + " >"
+
 
 
 def defineTokenCategory(type) :
@@ -32,13 +28,13 @@ def defineTokenCategory(type) :
     if type == '%' : return TokenCategory.OpArMod
     if type == '^' : return  TokenCategory.OpArExp
     if type == '>' or type == '>=' or type == '<' or type == '<=' : return  TokenCategory.OpReD
-    if type == '=' or type == '!=' : return  TokenCategory.OpReI
+    if type == '==' or type == '!=' : return  TokenCategory.OpReI
     if type == 'and' : return TokenCategory.OpLogAnd
     if type == 'or' : return TokenCategory.OpLogOr
     if type == 'not' : return TokenCategory.OpLogNot
     if type == 'bitand' : return TokenCategory.OpLogBand
     if type == 'bitor' : return TokenCategory.OpLogBor
-    if type == '==' : return TokenCategory.OpConcac
+    if type == '++' : return TokenCategory.OpConcac
     if type == '=' : return TokenCategory.OpAtr
     if type == 'if' : return TokenCategory.InsSIf
     if type == 'elseif' : return  TokenCategory.InsSIf
@@ -63,4 +59,8 @@ def defineTokenCategory(type) :
     if type == 'to' : return TokenCategory.IntTo
     if type == 'rate' : return TokenCategory.IntRate
     if isRegex(type, id) : return  TokenCategory.id
+    if type == 'output' : return TokenCategory.Out
+    if type == 'input' : return TokenCategory.In
+    if isRegex(type, Global) : return TokenCategory.Global
+    if type == ':' : return TokenCategory.SepPont
     return None
