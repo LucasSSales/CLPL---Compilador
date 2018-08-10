@@ -31,7 +31,7 @@ for lines in file.readlines() :
             isString = not isString
             #se antes das aspas tiver um abre parenteses, lanca o token
             if(newtoken == '('):
-                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken))
+                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken, 0, 0))
                 newtoken = ''
 
         #so entra se nao estiver concatenando uma string ou lendo um comentario
@@ -39,16 +39,16 @@ for lines in file.readlines() :
         if (isString == False and isComment == False):
            #caso token pertenca a composites
             if(newtoken + character in composites):
-                tokenSequence.append(Token(defineTokenCategory(newtoken + character), newtoken + character))
+                tokenSequence.append(Token(defineTokenCategory(newtoken + character), newtoken + character, 0, 0))
                 newtoken = ''
                 continue
             #caso token pertenca a atomics
             elif(newtoken in atomics):
-                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken))
+                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken, 0, 0))
                 newtoken = ''
             #caso mais geral, tratando p n entrar nulo
             elif(newtoken != '' and character in atomics):
-                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken))
+                tokenSequence.append(Token(defineTokenCategory(newtoken), newtoken, 0, 0))
                 newtoken = ''
 
             #apos lancar o token, se estiver num ' ' ou num '\n', passa pro proximo
