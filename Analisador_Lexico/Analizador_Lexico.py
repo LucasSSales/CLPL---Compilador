@@ -6,6 +6,7 @@ class reader():
         self.collumn = 0
         self.line = 0
         self.actualLine = file.readline()
+        print(self.actualLine, end = '')
 
     def Line(self):
         return self.actualLine[self.collumn:]
