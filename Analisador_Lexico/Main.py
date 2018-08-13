@@ -9,7 +9,7 @@ end = True
 line = 0
 k = myreader.nextToken()
 
-while k.token.value != 49 :
+while k.token.value != TokenCategory.EOF.value :
     print(k)
     k = myreader.nextToken()
 print(k)
