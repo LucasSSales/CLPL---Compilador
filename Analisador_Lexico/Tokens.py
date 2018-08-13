@@ -1,7 +1,7 @@
 from enum import  Enum
 from Regex import  *
 class TokenCategory(Enum):
-    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont, Return = list(range(49))
+    id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont, Return, EOF = list(range(50))
 
 class Token() :
     def __init__(self, token, value, line, column):
@@ -10,7 +10,7 @@ class Token() :
         self.line = line
         self.column = column
     def __str__(self):
-        return "[%04d %04d] {%04d %10s} {%s}" %(self.line,self.column, self.token.value, self.token.name, self.value)
+        return  "        [%04d, %04d] (%04d, %10s) {%s}" %(self.line,self.column, self.token.value, self.token.name, self.value)
 
 
 
@@ -64,4 +64,6 @@ def defineTokenCategory(type) :
     if isRegex(type, id) : return  TokenCategory.id
     if isRegex(type, Global) : return TokenCategory.Global
     if type == ':' : return TokenCategory.SepPont
+    if type == "" : return TokenCategory.EOF
+    print(type)
     return None
