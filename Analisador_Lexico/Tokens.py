@@ -65,5 +65,4 @@ def defineTokenCategory(type) :
     if isRegex(type, Global) : return TokenCategory.Global
     if type == ':' : return TokenCategory.SepPont
     if type == "" : return TokenCategory.EOF
-    print(type)
     return None
