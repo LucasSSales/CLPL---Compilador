@@ -30,6 +30,12 @@ class reader():
         if self.Line() == '' :
             return Token(defineTokenCategory(''), newtoken, self.line, inicialCollum)
         lines = self.actualLine[self.collumn:]
+        z = 0
+        while z < len(lines) and lines[z] == ' ' :
+            z += 1
+        self.collumn += z
+        inicialCollum = self.collumn
+        lines = self.actualLine[self.collumn:]
 
         for character in lines :
             if isComment :

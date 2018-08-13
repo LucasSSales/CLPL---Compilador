@@ -1,4 +1,7 @@
 Init():int{
+
+
+
     output("Alo mundo!\n"); //aki printa alo mundo
     return 0;
 }
