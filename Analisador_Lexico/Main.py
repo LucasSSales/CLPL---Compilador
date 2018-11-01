@@ -10,6 +10,6 @@ line = 0
 k = myreader.nextToken()
 
 while k.token.value != TokenCategory.EOF.value :
-    print(k)
+    print(k.token)
     k = myreader.nextToken()
 print(k)

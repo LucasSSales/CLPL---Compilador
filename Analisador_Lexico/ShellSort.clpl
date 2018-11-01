@@ -18,7 +18,7 @@ ShellSort(int[] : a, int : tam): int[] { //kk eae men
     return a;
 }
 
-printArray(int : a[], int : tam):void{
+printArray(int[]: a, int : tam):void{
     int i;
     for(i = 0 to tam-1){
         output("%int ", a[i]);
@@ -30,7 +30,7 @@ Init():int{
     output("Digite o tamanho: ");
     int tam;
 input("%var", tam);
-    int a[tam];
+    int[tam] a;
     output("Digite os elementos:\n");
     for(i = 0 to tam-1){
         input("%var", a[i]);

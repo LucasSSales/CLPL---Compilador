@@ -15,6 +15,7 @@ class reader():
         self.line += 1
         self.collumn = 0
         self. actualLine = self.file.readline()
+        print("|%04d|" %(self.line), end='  ')
         print(self.actualLine, end = '')
     def nextToken(self):
         k = self.findToken()
