@@ -1,5 +1,0 @@
-int a = "OOONOOOO";
-
-
-
-int b = c+d;

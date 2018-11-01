@@ -1,7 +1,5 @@
 fib(int : limite):int{
-    int f = 1;
-    int anterior = 1;
-    int contador = 2;
+    int f = 1, anterior = 1, contador = 2;
     if(limite == 0){
         output("0");
         return 1;
