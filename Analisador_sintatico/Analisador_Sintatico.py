@@ -23,13 +23,14 @@ class SlrParse():
             for j in table.keys():
                 table[j].append(i.pop(0))
         return table
+
     def getActions(self):
         op = open("Actions.txt", 'r').read()
         op = op.split('\n')
         t = []
         for i in op:
             t.append(i.split(" "))
-        return  t
+        return t
 
     def prints(self):
         print(self.actions)
@@ -53,12 +54,9 @@ class SlrParse():
                 stack.append( self.table[y][x] ) #empilha o valor da transicao
             else:
                 print("ERRO")
-            #print(token.token)
             token = myreader.nextToken()
-        if(len(stack) == 1 and stack[0] != self.actions[0][0]):
-            print("ACEITA")
-        else:
-            print("ERRO")
-        #print(token)
+        #print("              " + str(token))  # listando tokens
 
-print("kkeaemen")
+
+
+
