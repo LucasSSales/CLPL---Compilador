@@ -1,5 +1,5 @@
 from enum import  Enum
-from Regex import  *
+from Analisador_Lexico.Regex import  *
 class TokenCategory(Enum):
     Id, Init, TypeInt, TypeFloat, TypeBool, TypeChar, TypeString, TypeConst, OpArAd, OpArMult, OpArdiv, OpArMod, OpArExp, OpReD, OpReI, OpLogAnd, OpLogOr, OpLogNot, OpLogBand, OpLogBor, OpConcac, OpAtr, InsSIf, InsSElseif, InsSElse, InsInWh, InsInDo, InsInfor, BeginP, EndP, BeginC, EndC, BeginCh, EndCh, ConstInt, ConstFlaot, ConstBool, ConstChar, ConstString, SepV, SepPV, void, IntTo, IntRate, Out, In, Global, SepPont, Return, EOF = list(range(50))
 
@@ -10,7 +10,7 @@ class Token() :
         self.line = line
         self.column = column
     def __str__(self):
-        return  "        [%04d, %04d] (%04d, %10s) {%s}" %(self.line,self.column, self.token.value, self.token.name, self.value)
+        return  "              [%04d, %04d] (%04d, %10s) {%s}" %(self.line,self.column, self.token.value, self.token.name, self.value)
 
 
 

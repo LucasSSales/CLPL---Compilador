@@ -1,4 +1,4 @@
-from Tokens import *
+from Analisador_Lexico.Tokens import *
 
 class reader():
     def __init__(self, file):
