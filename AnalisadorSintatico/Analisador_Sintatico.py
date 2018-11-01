@@ -1,4 +1,6 @@
 from Analizador_Lexico import *
+import sys
+sys.path.append('..\AnalisadorSintatico')
 
 class AnalisadorSintatico():
     def __init__(self):
@@ -25,17 +27,24 @@ class AnalisadorSintatico():
 
 
 
-    def analyse(self, t):
+    def analyse(self):
         stack = [0]
+
         filename = sys.argv[1]
         file = open(filename, "r")
         myreader = reader(file)
-        token = t
+        token = myreader.nextToken()
 
-        print(self.table[stack[0]][token])
-
-        # if()
+        print(self.table[token][stack[0]])
 
 
+        while token.token.value != TokenCategory.EOF.value:
+            print(k.token)
+            token = myreader.nextToken()
+        print(token)
+
+
+anal = AnalisadorSintatico()
+anal.analyse()
 
 
