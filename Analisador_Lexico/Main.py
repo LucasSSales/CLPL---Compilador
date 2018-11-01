@@ -6,8 +6,6 @@ filename = sys.argv[1]
 file = open(filename, "r")
 
 myreader = reader(file)
-end = True
-line = 0
 k = myreader.nextToken()
 
 while k.token.value != TokenCategory.EOF.value :
