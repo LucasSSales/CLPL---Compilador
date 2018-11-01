@@ -38,10 +38,12 @@ class SlrParse():
         token = self.myreader.nextToken()
         while token.token.value != TokenCategory.EOF.value:
             action = self.table[token][self.stack[-1]] #pega acao na tabela
+            print("              " + str(token)) #listando tokens
             if(action[0] == "e"):
                 stack.append(token) #empilha token
                 stack.append(action[1:]) #empilha valor
             elif(action[0] == "s"):
+                print("          " + str(self.actions[ action[1:] ]))  # imprimir producao
                 n = 2 * (len(self.actions[ action[1:] ])-2) #num de simbolos no lado direito da producao
                 for i in range(n):
                     stack.pop(-1)  #desempilha as producoes que serao reduzidas
