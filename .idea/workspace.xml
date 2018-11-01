@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b8c3eb7-3998-4d5a-b914-4656e81a632e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Analisador_sintatico/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AnalisadorSintatico/AloMundo.clpl" afterPath="$PROJECT_DIR$/Analisador_sintatico/AloMundo.clpl" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AnalisadorSintatico/Analizador_Lexico.py" afterPath="$PROJECT_DIR$/Analisador_sintatico/Analizador_Lexico.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AnalisadorSintatico/Regex.py" afterPath="$PROJECT_DIR$/Analisador_sintatico/Regex.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AnalisadorSintatico/Tokens.py" afterPath="$PROJECT_DIR$/Analisador_sintatico/Tokens.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnalisadorSintatico/Analisador_Sintatico.py" afterPath="$PROJECT_DIR$/AnalisadorSintatico/Analisador_Sintatico.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py" afterPath="$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +24,8 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Analisador_Lexico/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -28,13 +34,23 @@
         </entry>
       </file>
       <file leaf-file-name="Analisador_Sintatico.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AnalisadorSintatico/Analisador_Sintatico.py">
+        <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+            <state relative-caret-position="590">
+              <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Analizador_Lexico.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Analizador_Lexico.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="31" column="85" lean-forward="true" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,11 +71,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Analisador_Sintatico/Analisador_Sintatico.py" />
-        <option value="$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/AnalisadorSintatico.py" />
         <option value="$PROJECT_DIR$/Analisador_Lexico/Main.py" />
         <option value="$PROJECT_DIR$/AnalisadorSintatico/Analisador_Sintatico.py" />
+        <option value="$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py" />
       </list>
     </option>
   </component>
@@ -122,6 +138,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Analisador_sintatico" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CLPL---Compilador" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CLPL---Compilador" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Analisador_Lexico" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -135,6 +165,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lucas\Desktop\CLPL---Compilador\Analisador_sintatico" />
       <recent name="C:\Users\Lucas\Desktop\CLPL---Compilador\Analisador_Lexico" />
       <recent name="C:\Users\Lucas\Desktop\CLPL---Compilador" />
     </key>
@@ -261,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -309,7 +340,7 @@
         <state relative-caret-position="51">
           <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -342,13 +373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AnalisadorSintatico.py" />
     <entry file="file://$PROJECT_DIR$/AnalisadorSintatico/SLRTable.csv">
       <provider selected="true" editor-type-id="text-editor">
@@ -364,25 +388,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Analisador_Lexico/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AnalisadorSintatico/Tokens.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AnalisadorSintatico/Analizador_Lexico.py">
+    <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Tokens.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -392,8 +398,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AnalisadorSintatico/Analisador_Sintatico.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+        <state relative-caret-position="-413">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analisador_Lexico/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Analizador_Lexico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="31" column="85" lean-forward="true" selection-start-line="31" selection-start-column="85" selection-end-line="31" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Analisador_sintatico/Analisador_Sintatico.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="58" column="25" lean-forward="false" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

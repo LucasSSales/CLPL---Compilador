@@ -1,5 +1,7 @@
-from Analizador_Lexico import *
 import sys
+
+from Analisador_sintatico.Analizador_Lexico import *
+
 
 class AnalisadorSintatico():
     def __init__(self):
