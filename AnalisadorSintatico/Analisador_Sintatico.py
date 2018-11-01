@@ -1,6 +1,5 @@
 from Analizador_Lexico import *
 import sys
-sys.path.append('..\AnalisadorSintatico')
 
 class AnalisadorSintatico():
     def __init__(self):
