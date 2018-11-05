@@ -6,6 +6,7 @@ class reader():
         self.collumn = 0
         self.line = 0
         self.actualLine = file.readline()
+        print("%04d" %(self.line+1), end='  ')
         print(self.actualLine, end = '')
 
     def Line(self):
@@ -16,7 +17,7 @@ class reader():
         self.collumn = 0
         self. actualLine = self.file.readline()
         if self.actualLine == '': return
-        print("%04d" %(self.line), end='  ')
+        print("%04d" %(self.line+1), end='  ')
         print(self.actualLine, end = '')
     def nextToken(self):
         k = self.findToken()
