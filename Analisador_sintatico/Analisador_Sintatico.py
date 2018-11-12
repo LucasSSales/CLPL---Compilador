@@ -50,7 +50,7 @@ class SlrParse():
                  #print("          " + str(self.actions[ int(action[1:]) ]))  # imprimir producao
                  n = 2 * (len(self.actions[ int(action[1:]) ])-1) #num de simbolos no lado direito da producao
                  print("          ", end="")
-                 print(self.actions[ int(action[1:]) ][0] + " -> ", end = '')
+                 print(self.actions[ int(action[1:]) ][0] + " = ", end = '')
                  for i in self.actions[ int(action[1:]) ][1:] :
                      print(i, end = ' ')
                  print("")

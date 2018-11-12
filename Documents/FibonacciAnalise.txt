@@ -1,339 +1,339 @@
-fib(int : limite):int{
-              [0000, 0000] (0000,         Id) {fib}
-              [0000, 0003] (0028,     BeginP) {(}
-              [0000, 0004] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-              [0000, 0008] (0047,    SepPont) {:}
-              [0000, 0010] (0000,         Id) {limite}
-          PARAMITER -> TYPE SepPont Id 
-          PARAMITER_LIST -> PARAMITER 
-              [0000, 0016] (0029,       EndP) {)}
-              [0000, 0017] (0047,    SepPont) {:}
-              [0000, 0018] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-          TYPE_FUNC -> TYPE 
-              [0000, 0021] (0032,    BeginCh) {{}
-|0001|      int f = 1, anterior = 1, contador = 2;
-              [0001, 0004] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-              [0001, 0008] (0000,         Id) {f}
-              [0001, 0010] (0021,      OpAtr) {=}
-              [0001, 0012] (0034,   ConstInt) {1}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0001, 0013] (0039,       SepV) {,}
-              [0001, 0015] (0000,         Id) {anterior}
-              [0001, 0024] (0021,      OpAtr) {=}
-              [0001, 0026] (0034,   ConstInt) {1}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0001, 0027] (0039,       SepV) {,}
-              [0001, 0029] (0000,         Id) {contador}
-              [0001, 0038] (0021,      OpAtr) {=}
-              [0001, 0040] (0034,   ConstInt) {2}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0001, 0041] (0040,      SepPV) {;}
-|0002|      if(limite == 0){
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          DECLARATION_LIST -> DECLARATION_TYPE SepV DECLARATION_LIST 
-          DECLARATION_LIST -> DECLARATION_TYPE SepV DECLARATION_LIST 
-          VAR_DECLARATION -> TYPE DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMAND 
-              [0002, 0004] (0022,     InsSIf) {if}
-              [0002, 0006] (0028,     BeginP) {(}
-              [0002, 0007] (0000,         Id) {limite}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-              [0002, 0014] (0014,      OpReI) {==}
-          OP_RE -> OpReI 
-              [0002, 0017] (0034,   ConstInt) {0}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_RL OP_RE OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-              [0002, 0018] (0029,       EndP) {)}
-              [0002, 0019] (0032,    BeginCh) {{}
-|0003|          output("0");
-              [0003, 0008] (0044,        Out) {output}
-              [0003, 0014] (0028,     BeginP) {(}
-              [0003, 0015] (0038, ConstString) {"0"}
-              [0003, 0018] (0029,       EndP) {)}
-              [0003, 0019] (0040,      SepPV) {;}
-|0004|          return 1;
-          COMAND -> Out BeginP ConstString EndP SepPV 
-          COMANDS_LIST -> COMAND 
-              [0004, 0008] (0048,     Return) {return}
-              [0004, 0015] (0034,   ConstInt) {1}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          RETURN_TYPE -> LIST_OPERATION_LG 
-              [0004, 0016] (0040,      SepPV) {;}
-|0005|      }
-          RETURN -> Return RETURN_TYPE SepPV 
-          COMAND -> RETURN 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0005, 0004] (0033,      EndCh) {}}
-|0006|      if(limite == 1){
-          COMAND -> InsSIf BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0006, 0004] (0022,     InsSIf) {if}
-              [0006, 0006] (0028,     BeginP) {(}
-              [0006, 0007] (0000,         Id) {limite}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-              [0006, 0014] (0014,      OpReI) {==}
-          OP_RE -> OpReI 
-              [0006, 0017] (0034,   ConstInt) {1}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_RL OP_RE OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-              [0006, 0018] (0029,       EndP) {)}
-              [0006, 0019] (0032,    BeginCh) {{}
-|0007|          output(", 1");
-              [0007, 0008] (0044,        Out) {output}
-              [0007, 0014] (0028,     BeginP) {(}
-              [0007, 0015] (0038, ConstString) {", 1"}
-              [0007, 0020] (0029,       EndP) {)}
-              [0007, 0021] (0040,      SepPV) {;}
-|0008|          return 2;
-          COMAND -> Out BeginP ConstString EndP SepPV 
-          COMANDS_LIST -> COMAND 
-              [0008, 0008] (0048,     Return) {return}
-              [0008, 0015] (0034,   ConstInt) {2}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          RETURN_TYPE -> LIST_OPERATION_LG 
-              [0008, 0016] (0040,      SepPV) {;}
-|0009|      }
-          RETURN -> Return RETURN_TYPE SepPV 
-          COMAND -> RETURN 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0009, 0004] (0033,      EndCh) {}}
-|0010|      while(f <= limite){
-          COMAND -> InsSIf BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0010, 0004] (0025,    InsInWh) {while}
-              [0010, 0009] (0028,     BeginP) {(}
-              [0010, 0010] (0000,         Id) {f}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-              [0010, 0012] (0013,      OpReD) {<=}
-          OP_RE -> OpReD 
-              [0010, 0015] (0000,         Id) {limite}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_RL OP_RE OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-              [0010, 0021] (0029,       EndP) {)}
-              [0010, 0022] (0032,    BeginCh) {{}
-|0011|          output(", %int", f);
-              [0011, 0008] (0044,        Out) {output}
-              [0011, 0014] (0028,     BeginP) {(}
-              [0011, 0015] (0038, ConstString) {", %int"}
-              [0011, 0023] (0039,       SepV) {,}
-              [0011, 0025] (0000,         Id) {f}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-              [0011, 0026] (0029,       EndP) {)}
-              [0011, 0027] (0040,      SepPV) {;}
-|0012|          contador = contador + 1;
-          COMAND -> Out BeginP ConstString SepV LIST_OPERATION_LG EndP SepPV 
-          COMANDS_LIST -> COMAND 
-              [0012, 0008] (0000,         Id) {contador}
-              [0012, 0017] (0021,      OpAtr) {=}
-              [0012, 0019] (0000,         Id) {contador}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-              [0012, 0028] (0008,     OpArAd) {+}
-          OP_AR -> OpArAd 
-              [0012, 0030] (0034,   ConstInt) {1}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> OPERATION_AR OP_AR ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0012, 0031] (0040,      SepPV) {;}
-|0013|          int temp = f;
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          VAR_DECLARATION -> DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0013, 0008] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-              [0013, 0012] (0000,         Id) {temp}
-              [0013, 0017] (0021,      OpAtr) {=}
-              [0013, 0019] (0000,         Id) {f}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0013, 0020] (0040,      SepPV) {;}
-|0014|          f = f + anterior;
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          VAR_DECLARATION -> TYPE DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0014, 0008] (0000,         Id) {f}
-              [0014, 0010] (0021,      OpAtr) {=}
-              [0014, 0012] (0000,         Id) {f}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-              [0014, 0014] (0008,     OpArAd) {+}
-          OP_AR -> OpArAd 
-              [0014, 0016] (0000,         Id) {anterior}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> OPERATION_AR OP_AR ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0014, 0024] (0040,      SepPV) {;}
-|0015|          anterior = temp;
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          VAR_DECLARATION -> DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0015, 0008] (0000,         Id) {anterior}
-              [0015, 0017] (0021,      OpAtr) {=}
-              [0015, 0019] (0000,         Id) {temp}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          ATTRIBUTION -> Id OpAtr LIST_OPERATION_LG 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0015, 0023] (0040,      SepPV) {;}
-|0016|      }
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          VAR_DECLARATION -> DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0016, 0004] (0033,      EndCh) {}}
-|0017|      return contador;
-          LOOP -> InsInWh BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
-          COMAND -> LOOP 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0017, 0004] (0048,     Return) {return}
-              [0017, 0011] (0000,         Id) {contador}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          RETURN_TYPE -> LIST_OPERATION_LG 
-              [0017, 0019] (0040,      SepPV) {;}
-|0018|  }
-          RETURN -> Return RETURN_TYPE SepPV 
-          COMAND -> RETURN 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0018, 0000] (0033,      EndCh) {}}
-|0019|  
-|0020|  Init():int{
-          FUNC -> Id BeginP PARAMITER_LIST EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
-          LIST_FUNC -> FUNC 
-              [0020, 0000] (0001,       Init) {Init}
-              [0020, 0004] (0028,     BeginP) {(}
-              [0020, 0005] (0029,       EndP) {)}
-              [0020, 0006] (0047,    SepPont) {:}
-              [0020, 0007] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-          TYPE_FUNC -> TYPE 
-              [0020, 0010] (0032,    BeginCh) {{}
-|0021|      output("Digite o limite:");
-              [0021, 0004] (0044,        Out) {output}
-              [0021, 0010] (0028,     BeginP) {(}
-              [0021, 0011] (0038, ConstString) {"Digite o limite:"}
-              [0021, 0029] (0029,       EndP) {)}
-              [0021, 0030] (0040,      SepPV) {;}
-|0022|      int limite;
-          COMAND -> Out BeginP ConstString EndP SepPV 
-          COMANDS_LIST -> COMAND 
-              [0022, 0004] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-              [0022, 0008] (0000,         Id) {limite}
-          ATTRIBUTION -> Id 
-          DECLARATION_TYPE -> ATTRIBUTION 
-              [0022, 0014] (0040,      SepPV) {;}
-|0023|      input("%var", limite);
-          DECLARATION_LIST -> DECLARATION_TYPE SepPV 
-          VAR_DECLARATION -> TYPE DECLARATION_LIST 
-          COMAND -> VAR_DECLARATION 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0023, 0004] (0045,         In) {input}
-              [0023, 0009] (0028,     BeginP) {(}
-              [0023, 0010] (0038, ConstString) {"%var"}
-              [0023, 0016] (0039,       SepV) {,}
-              [0023, 0018] (0000,         Id) {limite}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-              [0023, 0024] (0029,       EndP) {)}
-              [0023, 0025] (0040,      SepPV) {;}
-|0024|      fib(limite); //retorna quantos elementos da foram impressos
-          COMAND -> In BeginP ConstString SepV LIST_OPERATION_LG EndP SepPV 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0024, 0004] (0000,         Id) {fib}
-              [0024, 0007] (0028,     BeginP) {(}
-              [0024, 0008] (0000,         Id) {limite}
-          ATRIBVALUE -> Id 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          LI -> LIST_OPERATION_LG 
-              [0024, 0014] (0029,       EndP) {)}
-              [0024, 0015] (0040,      SepPV) {;}
-|0025|      return 0;
-          FUNC_CALL -> Id BeginP LI EndP SepPV 
-          COMAND -> FUNC_CALL 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0025, 0004] (0048,     Return) {return}
-              [0025, 0011] (0034,   ConstInt) {0}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          RETURN_TYPE -> LIST_OPERATION_LG 
-              [0025, 0012] (0040,      SepPV) {;}
-|0026|  }
-          RETURN -> Return RETURN_TYPE SepPV 
-          COMAND -> RETURN 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0026, 0000] (0033,      EndCh) {}}
-|0027|            MAIN_FUNC -> Init BeginP EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
-          INICIAL -> LIST_FUNC MAIN_FUNC 
+0001  fib(int : limite):int{
+              [0001, 0001] (0000,         Id) {fib}
+              [0001, 0004] (0028,     BeginP) {(}
+              [0001, 0005] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+              [0001, 0009] (0047,    SepPont) {:}
+              [0001, 0011] (0000,         Id) {limite}
+          PARAMITER = TYPE SepPont Id 
+          PARAMITER_LIST = PARAMITER 
+              [0001, 0017] (0029,       EndP) {)}
+              [0001, 0018] (0047,    SepPont) {:}
+              [0001, 0019] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+          TYPE_FUNC = TYPE 
+              [0001, 0022] (0032,    BeginCh) {{}
+0002      int f = 1, anterior = 1, contador = 2;
+              [0002, 0005] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+              [0002, 0009] (0000,         Id) {f}
+              [0002, 0011] (0021,      OpAtr) {=}
+              [0002, 0013] (0034,   ConstInt) {1}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0002, 0014] (0039,       SepV) {,}
+              [0002, 0016] (0000,         Id) {anterior}
+              [0002, 0025] (0021,      OpAtr) {=}
+              [0002, 0027] (0034,   ConstInt) {1}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0002, 0028] (0039,       SepV) {,}
+              [0002, 0030] (0000,         Id) {contador}
+              [0002, 0039] (0021,      OpAtr) {=}
+              [0002, 0041] (0034,   ConstInt) {2}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0002, 0042] (0040,      SepPV) {;}
+0003      if(limite == 0){
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          DECLARATION_LIST = DECLARATION_TYPE SepV DECLARATION_LIST 
+          DECLARATION_LIST = DECLARATION_TYPE SepV DECLARATION_LIST 
+          VAR_DECLARATION = TYPE DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMAND 
+              [0003, 0005] (0022,     InsSIf) {if}
+              [0003, 0007] (0028,     BeginP) {(}
+              [0003, 0008] (0000,         Id) {limite}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+              [0003, 0015] (0014,      OpReI) {==}
+          OP_RE = OpReI 
+              [0003, 0018] (0034,   ConstInt) {0}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_RL OP_RE OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+              [0003, 0019] (0029,       EndP) {)}
+              [0003, 0020] (0032,    BeginCh) {{}
+0004          output("0");
+              [0004, 0009] (0044,        Out) {output}
+              [0004, 0015] (0028,     BeginP) {(}
+              [0004, 0016] (0038, ConstString) {"0"}
+              [0004, 0019] (0029,       EndP) {)}
+              [0004, 0020] (0040,      SepPV) {;}
+0005          return 1;
+          COMAND = Out BeginP ConstString EndP SepPV 
+          COMANDS_LIST = COMAND 
+              [0005, 0009] (0048,     Return) {return}
+              [0005, 0016] (0034,   ConstInt) {1}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          RETURN_TYPE = LIST_OPERATION_LG 
+              [0005, 0017] (0040,      SepPV) {;}
+0006      }
+          RETURN = Return RETURN_TYPE SepPV 
+          COMAND = RETURN 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0006, 0005] (0033,      EndCh) {}}
+0007      if(limite == 1){
+          COMAND = InsSIf BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0007, 0005] (0022,     InsSIf) {if}
+              [0007, 0007] (0028,     BeginP) {(}
+              [0007, 0008] (0000,         Id) {limite}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+              [0007, 0015] (0014,      OpReI) {==}
+          OP_RE = OpReI 
+              [0007, 0018] (0034,   ConstInt) {1}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_RL OP_RE OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+              [0007, 0019] (0029,       EndP) {)}
+              [0007, 0020] (0032,    BeginCh) {{}
+0008          output(", 1");
+              [0008, 0009] (0044,        Out) {output}
+              [0008, 0015] (0028,     BeginP) {(}
+              [0008, 0016] (0038, ConstString) {", 1"}
+              [0008, 0021] (0029,       EndP) {)}
+              [0008, 0022] (0040,      SepPV) {;}
+0009          return 2;
+          COMAND = Out BeginP ConstString EndP SepPV 
+          COMANDS_LIST = COMAND 
+              [0009, 0009] (0048,     Return) {return}
+              [0009, 0016] (0034,   ConstInt) {2}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          RETURN_TYPE = LIST_OPERATION_LG 
+              [0009, 0017] (0040,      SepPV) {;}
+0010      }
+          RETURN = Return RETURN_TYPE SepPV 
+          COMAND = RETURN 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0010, 0005] (0033,      EndCh) {}}
+0011      while(f <= limite){
+          COMAND = InsSIf BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0011, 0005] (0025,    InsInWh) {while}
+              [0011, 0010] (0028,     BeginP) {(}
+              [0011, 0011] (0000,         Id) {f}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+              [0011, 0013] (0013,      OpReD) {<=}
+          OP_RE = OpReD 
+              [0011, 0016] (0000,         Id) {limite}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_RL OP_RE OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+              [0011, 0022] (0029,       EndP) {)}
+              [0011, 0023] (0032,    BeginCh) {{}
+0012          output(", %int", f);
+              [0012, 0009] (0044,        Out) {output}
+              [0012, 0015] (0028,     BeginP) {(}
+              [0012, 0016] (0038, ConstString) {", %int"}
+              [0012, 0024] (0039,       SepV) {,}
+              [0012, 0026] (0000,         Id) {f}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+              [0012, 0027] (0029,       EndP) {)}
+              [0012, 0028] (0040,      SepPV) {;}
+0013          contador = contador + 1;
+          COMAND = Out BeginP ConstString SepV LIST_OPERATION_LG EndP SepPV 
+          COMANDS_LIST = COMAND 
+              [0013, 0009] (0000,         Id) {contador}
+              [0013, 0018] (0021,      OpAtr) {=}
+              [0013, 0020] (0000,         Id) {contador}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+              [0013, 0029] (0008,     OpArAd) {+}
+          OP_AR = OpArAd 
+              [0013, 0031] (0034,   ConstInt) {1}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = OPERATION_AR OP_AR ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0013, 0032] (0040,      SepPV) {;}
+0014          int temp = f;
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          VAR_DECLARATION = DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0014, 0009] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+              [0014, 0013] (0000,         Id) {temp}
+              [0014, 0018] (0021,      OpAtr) {=}
+              [0014, 0020] (0000,         Id) {f}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0014, 0021] (0040,      SepPV) {;}
+0015          f = f + anterior;
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          VAR_DECLARATION = TYPE DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0015, 0009] (0000,         Id) {f}
+              [0015, 0011] (0021,      OpAtr) {=}
+              [0015, 0013] (0000,         Id) {f}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+              [0015, 0015] (0008,     OpArAd) {+}
+          OP_AR = OpArAd 
+              [0015, 0017] (0000,         Id) {anterior}
+          ATRIBVALUE = Id 
+          OPERATION_AR = OPERATION_AR OP_AR ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0015, 0025] (0040,      SepPV) {;}
+0016          anterior = temp;
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          VAR_DECLARATION = DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0016, 0009] (0000,         Id) {anterior}
+              [0016, 0018] (0021,      OpAtr) {=}
+              [0016, 0020] (0000,         Id) {temp}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          ATTRIBUTION = Id OpAtr LIST_OPERATION_LG 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0016, 0024] (0040,      SepPV) {;}
+0017      }
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          VAR_DECLARATION = DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0017, 0005] (0033,      EndCh) {}}
+0018      return contador;
+          LOOP = InsInWh BeginP LIST_OPERATION_LG EndP BeginCh COMANDS_LIST EndCh 
+          COMAND = LOOP 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0018, 0005] (0048,     Return) {return}
+              [0018, 0012] (0000,         Id) {contador}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          RETURN_TYPE = LIST_OPERATION_LG 
+              [0018, 0020] (0040,      SepPV) {;}
+0019  }
+          RETURN = Return RETURN_TYPE SepPV 
+          COMAND = RETURN 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0019, 0001] (0033,      EndCh) {}}
+0020  
+0021  Init():int{
+          FUNC = Id BeginP PARAMITER_LIST EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
+          LIST_FUNC = FUNC 
+              [0021, 0001] (0001,       Init) {Init}
+              [0021, 0005] (0028,     BeginP) {(}
+              [0021, 0006] (0029,       EndP) {)}
+              [0021, 0007] (0047,    SepPont) {:}
+              [0021, 0008] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+          TYPE_FUNC = TYPE 
+              [0021, 0011] (0032,    BeginCh) {{}
+0022      output("Digite o limite:");
+              [0022, 0005] (0044,        Out) {output}
+              [0022, 0011] (0028,     BeginP) {(}
+              [0022, 0012] (0038, ConstString) {"Digite o limite:"}
+              [0022, 0030] (0029,       EndP) {)}
+              [0022, 0031] (0040,      SepPV) {;}
+0023      int limite;
+          COMAND = Out BeginP ConstString EndP SepPV 
+          COMANDS_LIST = COMAND 
+              [0023, 0005] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+              [0023, 0009] (0000,         Id) {limite}
+          ATTRIBUTION = Id 
+          DECLARATION_TYPE = ATTRIBUTION 
+              [0023, 0015] (0040,      SepPV) {;}
+0024      input("%var", limite);
+          DECLARATION_LIST = DECLARATION_TYPE SepPV 
+          VAR_DECLARATION = TYPE DECLARATION_LIST 
+          COMAND = VAR_DECLARATION 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0024, 0005] (0045,         In) {input}
+              [0024, 0010] (0028,     BeginP) {(}
+              [0024, 0011] (0038, ConstString) {"%var"}
+              [0024, 0017] (0039,       SepV) {,}
+              [0024, 0019] (0000,         Id) {limite}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+              [0024, 0025] (0029,       EndP) {)}
+              [0024, 0026] (0040,      SepPV) {;}
+0025      fib(limite); //retorna quantos elementos da foram impressos
+          COMAND = In BeginP ConstString SepV LIST_OPERATION_LG EndP SepPV 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0025, 0005] (0000,         Id) {fib}
+              [0025, 0008] (0028,     BeginP) {(}
+              [0025, 0009] (0000,         Id) {limite}
+          ATRIBVALUE = Id 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          LI = LIST_OPERATION_LG 
+              [0025, 0015] (0029,       EndP) {)}
+              [0025, 0016] (0040,      SepPV) {;}
+0026      return 0;
+          FUNC_CALL = Id BeginP LI EndP SepPV 
+          COMAND = FUNC_CALL 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0026, 0005] (0048,     Return) {return}
+              [0026, 0012] (0034,   ConstInt) {0}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          RETURN_TYPE = LIST_OPERATION_LG 
+              [0026, 0013] (0040,      SepPV) {;}
+0027  }
+          RETURN = Return RETURN_TYPE SepPV 
+          COMAND = RETURN 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0027, 0001] (0033,      EndCh) {}}
+          MAIN_FUNC = Init BeginP EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
+          INICIAL = LIST_FUNC MAIN_FUNC 

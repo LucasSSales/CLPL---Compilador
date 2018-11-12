@@ -1,34 +1,34 @@
-Init():int{
-              [0000, 0000] (0001,       Init) {Init}
-              [0000, 0004] (0028,     BeginP) {(}
-              [0000, 0005] (0029,       EndP) {)}
-              [0000, 0006] (0047,    SepPont) {:}
-              [0000, 0007] (0002,    TypeInt) {int}
-          TYPE -> TypeInt 
-          TYPE_FUNC -> TYPE 
-              [0000, 0010] (0032,    BeginCh) {{}
-|0001|      output("Alo mundo!\n"); //aki printa alo mundo
-              [0001, 0004] (0044,        Out) {output}
-              [0001, 0010] (0028,     BeginP) {(}
-              [0001, 0011] (0038, ConstString) {"Alo mundo!\n"}
-              [0001, 0025] (0029,       EndP) {)}
-              [0001, 0026] (0040,      SepPV) {;}
-|0002|      return 0;
-          COMAND -> Out BeginP ConstString EndP SepPV 
-          COMANDS_LIST -> COMAND 
-              [0002, 0004] (0048,     Return) {return}
-              [0002, 0011] (0034,   ConstInt) {0}
-          CONST_TYPE -> ConstInt 
-          ATRIBVALUE -> CONST_TYPE 
-          OPERATION_AR -> ATRIBVALUE 
-          OPERATION_RL -> OPERATION_AR 
-          LIST_OPERATION_LG -> OPERATION_RL 
-          RETURN_TYPE -> LIST_OPERATION_LG 
-              [0002, 0012] (0040,      SepPV) {;}
-|0003|  }
-          RETURN -> Return RETURN_TYPE SepPV 
-          COMAND -> RETURN 
-          COMANDS_LIST -> COMANDS_LIST COMAND 
-              [0003, 0000] (0033,      EndCh) {}}
-|0004|            MAIN_FUNC -> Init BeginP EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
-          INICIAL -> MAIN_FUNC 
+0001  Init():int{
+              [0001, 0001] (0001,       Init) {Init}
+              [0001, 0005] (0028,     BeginP) {(}
+              [0001, 0006] (0029,       EndP) {)}
+              [0001, 0007] (0047,    SepPont) {:}
+              [0001, 0008] (0002,    TypeInt) {int}
+          TYPE = TypeInt 
+          TYPE_FUNC = TYPE 
+              [0001, 0011] (0032,    BeginCh) {{}
+0002      output("Alo mundo!\n"); //aki printa alo mundo
+              [0002, 0005] (0044,        Out) {output}
+              [0002, 0011] (0028,     BeginP) {(}
+              [0002, 0012] (0038, ConstString) {"Alo mundo!\n"}
+              [0002, 0026] (0029,       EndP) {)}
+              [0002, 0027] (0040,      SepPV) {;}
+0003      return 0;
+          COMAND = Out BeginP ConstString EndP SepPV 
+          COMANDS_LIST = COMAND 
+              [0003, 0005] (0048,     Return) {return}
+              [0003, 0012] (0034,   ConstInt) {0}
+          CONST_TYPE = ConstInt 
+          ATRIBVALUE = CONST_TYPE 
+          OPERATION_AR = ATRIBVALUE 
+          OPERATION_RL = OPERATION_AR 
+          LIST_OPERATION_LG = OPERATION_RL 
+          RETURN_TYPE = LIST_OPERATION_LG 
+              [0003, 0013] (0040,      SepPV) {;}
+0004  }
+          RETURN = Return RETURN_TYPE SepPV 
+          COMAND = RETURN 
+          COMANDS_LIST = COMANDS_LIST COMAND 
+              [0004, 0001] (0033,      EndCh) {}}
+          MAIN_FUNC = Init BeginP EndP SepPont TYPE_FUNC BeginCh COMANDS_LIST EndCh 
+          INICIAL = MAIN_FUNC 
